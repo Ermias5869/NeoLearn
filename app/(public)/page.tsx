@@ -22,7 +22,6 @@ export default function Home() {
               href="/courses"
               className={buttonVariants({
                 size: "lg",
-                variant: "outline",
               })}
             >
               Expore Courses

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   BookOpenIcon,
   ChevronDownIcon,
@@ -20,7 +22,7 @@ import {
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 interface Iprops {
   name: string;
   email: string;
@@ -94,8 +96,8 @@ export default function UserDropDown({ email, name, image }: Iprops) {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
 
-        <DropdownMenuSeparator onClick={signOut} />
-        <DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem onClick={signOut}>
           <LogOutIcon size={16} className="opacity-60" aria-hidden="true" />
           <span>Logout</span>
         </DropdownMenuItem>
