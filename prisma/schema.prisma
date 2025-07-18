@@ -101,12 +101,12 @@ model Course {
 
 enum CourseLevel {
   Beginner
-  Intermedit
+ Intermediate
   Advanced
 }
 
 enum CourseStatus {
   Draft
   Published
-  Archie
+ Archived
 }
