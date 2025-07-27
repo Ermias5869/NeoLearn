@@ -39,8 +39,12 @@ export default function NavBar() {
             {isPending ? null : data ? (
               <UserDropDown
                 email={data.user.email}
-                name={data.user.name}
-                image={data.user.image || ""}
+                name={
+                  data?.user.name && data?.user.name.length > 0
+                    ? data?.user.name.toUpperCase()
+                    : data?.user.email.toUpperCase().split("@")[0]
+                }
+                image={data.user.image || data?.user.email[0].toUpperCase()}
               />
             ) : (
               <>

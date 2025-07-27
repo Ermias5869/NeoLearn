@@ -30,6 +30,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Tiptap from "@/components/rich-text-editor/Tiptap";
+import Uploader from "@/components/UploaderFile/Uploader";
 export default function page() {
   const form = useForm<CourseSchemaType>({
     resolver: zodResolver(CourseSchema),
@@ -141,11 +143,7 @@ export default function page() {
                   <FormItem>
                     <FormLabel>Description</FormLabel>
                     <FormControl>
-                      <Textarea
-                        placeholder="Description"
-                        {...field}
-                        className="min-h-[120px]"
-                      />
+                      <Tiptap field={field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -160,7 +158,7 @@ export default function page() {
                   <FormItem>
                     <FormLabel>Thumbnail image</FormLabel>
                     <FormControl>
-                      <Input placeholder="thumbnail url" {...field} />
+                      <Uploader />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
